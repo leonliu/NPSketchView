@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		350F14181734CAC200F114EB /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 350F14171734CAC200F114EB /* girl.png */; };
+		35E7812B1733875B00DE6EB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E7812A1733875B00DE6EB4 /* UIKit.framework */; };
+		35E7812D1733875B00DE6EB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E7812C1733875B00DE6EB4 /* Foundation.framework */; };
+		35E7812F1733875B00DE6EB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E7812E1733875B00DE6EB4 /* CoreGraphics.framework */; };
+		35E781351733875B00DE6EB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 35E781331733875B00DE6EB4 /* InfoPlist.strings */; };
+		35E781371733875B00DE6EB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E781361733875B00DE6EB4 /* main.m */; };
+		35E7813B1733875B00DE6EB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E7813A1733875B00DE6EB4 /* AppDelegate.m */; };
+		35E7813D1733875B00DE6EB4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 35E7813C1733875B00DE6EB4 /* Default.png */; };
+		35E7813F1733875B00DE6EB4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35E7813E1733875B00DE6EB4 /* Default@2x.png */; };
+		35E781411733875B00DE6EB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35E781401733875B00DE6EB4 /* Default-568h@2x.png */; };
+		35E781441733875B00DE6EB4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E781431733875B00DE6EB4 /* ViewController.m */; };
+		35E781471733875B00DE6EB4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E781451733875B00DE6EB4 /* ViewController.xib */; };
+		35E7814F173387D800DE6EB4 /* NPSketchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E7814E173387D800DE6EB4 /* NPSketchView.m */; };
+		35E781521733880D00DE6EB4 /* NPShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E781511733880D00DE6EB4 /* NPShape.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		350F14171734CAC200F114EB /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
+		35E781271733875B00DE6EB4 /* NPSketchPadView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NPSketchPadView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E7812A1733875B00DE6EB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		35E7812C1733875B00DE6EB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		35E7812E1733875B00DE6EB4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		35E781321733875B00DE6EB4 /* NPSketchPadView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NPSketchPadView-Info.plist"; sourceTree = "<group>"; };
+		35E781341733875B00DE6EB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35E781361733875B00DE6EB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		35E781381733875B00DE6EB4 /* NPSketchPadView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NPSketchPadView-Prefix.pch"; sourceTree = "<group>"; };
+		35E781391733875B00DE6EB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		35E7813A1733875B00DE6EB4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		35E7813C1733875B00DE6EB4 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		35E7813E1733875B00DE6EB4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		35E781401733875B00DE6EB4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		35E781421733875B00DE6EB4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		35E781431733875B00DE6EB4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		35E781461733875B00DE6EB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		35E7814D173387D800DE6EB4 /* NPSketchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSketchView.h; sourceTree = "<group>"; };
+		35E7814E173387D800DE6EB4 /* NPSketchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSketchView.m; sourceTree = "<group>"; };
+		35E781501733880D00DE6EB4 /* NPShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPShape.h; sourceTree = "<group>"; };
+		35E781511733880D00DE6EB4 /* NPShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPShape.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35E781241733875B00DE6EB4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E7812B1733875B00DE6EB4 /* UIKit.framework in Frameworks */,
+				35E7812D1733875B00DE6EB4 /* Foundation.framework in Frameworks */,
+				35E7812F1733875B00DE6EB4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		35E7811E1733875B00DE6EB4 = {
+			isa = PBXGroup;
+			children = (
+				35E781301733875B00DE6EB4 /* NPSketchPadView */,
+				35E781291733875B00DE6EB4 /* Frameworks */,
+				35E781281733875B00DE6EB4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		35E781281733875B00DE6EB4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				35E781271733875B00DE6EB4 /* NPSketchPadView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		35E781291733875B00DE6EB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				35E7812A1733875B00DE6EB4 /* UIKit.framework */,
+				35E7812C1733875B00DE6EB4 /* Foundation.framework */,
+				35E7812E1733875B00DE6EB4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35E781301733875B00DE6EB4 /* NPSketchPadView */ = {
+			isa = PBXGroup;
+			children = (
+				350F14171734CAC200F114EB /* girl.png */,
+				35E781391733875B00DE6EB4 /* AppDelegate.h */,
+				35E7813A1733875B00DE6EB4 /* AppDelegate.m */,
+				35E781421733875B00DE6EB4 /* ViewController.h */,
+				35E781431733875B00DE6EB4 /* ViewController.m */,
+				35E781451733875B00DE6EB4 /* ViewController.xib */,
+				35E781311733875B00DE6EB4 /* Supporting Files */,
+				35E7814D173387D800DE6EB4 /* NPSketchView.h */,
+				35E7814E173387D800DE6EB4 /* NPSketchView.m */,
+				35E781501733880D00DE6EB4 /* NPShape.h */,
+				35E781511733880D00DE6EB4 /* NPShape.m */,
+			);
+			path = NPSketchPadView;
+			sourceTree = "<group>";
+		};
+		35E781311733875B00DE6EB4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35E781321733875B00DE6EB4 /* NPSketchPadView-Info.plist */,
+				35E781331733875B00DE6EB4 /* InfoPlist.strings */,
+				35E781361733875B00DE6EB4 /* main.m */,
+				35E781381733875B00DE6EB4 /* NPSketchPadView-Prefix.pch */,
+				35E7813C1733875B00DE6EB4 /* Default.png */,
+				35E7813E1733875B00DE6EB4 /* Default@2x.png */,
+				35E781401733875B00DE6EB4 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		35E781261733875B00DE6EB4 /* NPSketchPadView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35E7814A1733875B00DE6EB4 /* Build configuration list for PBXNativeTarget "NPSketchPadView" */;
+			buildPhases = (
+				35E781231733875B00DE6EB4 /* Sources */,
+				35E781241733875B00DE6EB4 /* Frameworks */,
+				35E781251733875B00DE6EB4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NPSketchPadView;
+			productName = NPSketchPadView;
+			productReference = 35E781271733875B00DE6EB4 /* NPSketchPadView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35E7811F1733875B00DE6EB4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = leon;
+			};
+			buildConfigurationList = 35E781221733875B00DE6EB4 /* Build configuration list for PBXProject "NPSketchPadView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 35E7811E1733875B00DE6EB4;
+			productRefGroup = 35E781281733875B00DE6EB4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				35E781261733875B00DE6EB4 /* NPSketchPadView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		35E781251733875B00DE6EB4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E781351733875B00DE6EB4 /* InfoPlist.strings in Resources */,
+				35E7813D1733875B00DE6EB4 /* Default.png in Resources */,
+				35E7813F1733875B00DE6EB4 /* Default@2x.png in Resources */,
+				35E781411733875B00DE6EB4 /* Default-568h@2x.png in Resources */,
+				35E781471733875B00DE6EB4 /* ViewController.xib in Resources */,
+				350F14181734CAC200F114EB /* girl.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		35E781231733875B00DE6EB4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35E781371733875B00DE6EB4 /* main.m in Sources */,
+				35E7813B1733875B00DE6EB4 /* AppDelegate.m in Sources */,
+				35E781441733875B00DE6EB4 /* ViewController.m in Sources */,
+				35E7814F173387D800DE6EB4 /* NPSketchView.m in Sources */,
+				35E781521733880D00DE6EB4 /* NPShape.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		35E781331733875B00DE6EB4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35E781341733875B00DE6EB4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		35E781451733875B00DE6EB4 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				35E781461733875B00DE6EB4 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		35E781481733875B00DE6EB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		35E781491733875B00DE6EB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		35E7814B1733875B00DE6EB4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NPSketchPadView/NPSketchPadView-Prefix.pch";
+				INFOPLIST_FILE = "NPSketchPadView/NPSketchPadView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		35E7814C1733875B00DE6EB4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NPSketchPadView/NPSketchPadView-Prefix.pch";
+				INFOPLIST_FILE = "NPSketchPadView/NPSketchPadView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		35E781221733875B00DE6EB4 /* Build configuration list for PBXProject "NPSketchPadView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E781481733875B00DE6EB4 /* Debug */,
+				35E781491733875B00DE6EB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		35E7814A1733875B00DE6EB4 /* Build configuration list for PBXNativeTarget "NPSketchPadView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				35E7814B1733875B00DE6EB4 /* Debug */,
+				35E7814C1733875B00DE6EB4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35E7811F1733875B00DE6EB4 /* Project object */;
+}
