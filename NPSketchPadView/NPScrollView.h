@@ -10,4 +10,6 @@
 
 @interface NPScrollView : UIScrollView
 
+@property (nonatomic) BOOL isViewOnly;  // If scroll is enabled, touches are not delivered to sub views.
+
 @end

@@ -18,6 +18,8 @@ static inline UIColor *defaultFillColor()
     return [UIColor whiteColor];
 }
 
+static CGPoint prevPosition = {0.f, 0.f};
+
 #define kDefaultLineWidth   3.0f
 #define kDefaultAlpha       1.0f
 
@@ -25,6 +27,7 @@ static inline UIColor *defaultFillColor()
 
 - (id)shapeWithType:(NPShapeType)type;
 - (void)updateCanvas:(BOOL)fullUpdate;
+- (void)gestureRecognizerFired:(UIPanGestureRecognizer *)sender;
 
 @end
 
@@ -58,6 +61,10 @@ static inline UIColor *defaultFillColor()
         _lineWidth = kDefaultLineWidth;
         _lineType = NPSolidLine;
         _alpha = kDefaultAlpha;
+        
+        
+        UIPanGestureRecognizer *gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizerFired:)];
+        [self addGestureRecognizer:gr];
     }
     return self;
 }
@@ -74,6 +81,9 @@ static inline UIColor *defaultFillColor()
         _lineWidth = kDefaultLineWidth;
         _lineType = NPSolidLine;
         _alpha = kDefaultAlpha;
+        
+        UIPanGestureRecognizer *gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(gestureRecognizerFired:)];
+        [self addGestureRecognizer:gr];
     }
     
     return self;
@@ -152,81 +162,65 @@ static inline UIColor *defaultFillColor()
     UIGraphicsEndImageContext();
 }
 
+
 #pragma mark - touches methods
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)gestureRecognizerFired:(UIPanGestureRecognizer *)sender
 {
-    _shape = [self shapeWithType:self.shapeType];
-    [_undoQueue addObject:_shape];
+    CGPoint pos = [sender locationInView:self];
     
-    UITouch *touch = [touches anyObject];
-    [_shape moveToStartPoint:[touch locationInView:self]];
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(sketchView:willDrawShape:)]) {
-        [_delegate sketchView:self willDrawShape:_shape];
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            // create a new drawing object
+            _shape = [self shapeWithType:self.shapeType];
+            [_undoQueue addObject:_shape];
+            
+            [_shape moveToStartPoint:pos];
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(sketchView:willDrawShape:)]) {
+                [_delegate sketchView:self willDrawShape:_shape];
+            }
+        }
+            break;
+        case UIGestureRecognizerStateChanged:
+        {
+            // record the point
+            [_shape updateFromPoint:prevPosition toPoint:pos];
+            
+            // call for drawing
+            [self setNeedsDisplay];
+        }
+            break;
+        case UIGestureRecognizerStateEnded:
+        {
+            [_shape updateFromPoint:prevPosition toPoint:pos];
+            
+            // when a touch ended, we finished one draw operation. We need
+            // to upate the canvas with this operation.
+            [self updateCanvas:NO];
+            
+            if (_delegate && [_delegate respondsToSelector:@selector(sketchView:didDrawShape:)]) {
+                [_delegate sketchView:self didDrawShape:_shape];
+            }
+            
+            // reset the current draw object since a new object is created
+            // in the next round of touches.
+            _shape = nil;
+            
+            // clear the redo queue since we just commit a new operation
+            [_redoQueue removeAllObjects];
+            
+            // call for drawing
+            [self setNeedsDisplay];
+        }
+            break;
+            
+        default:
+            NSLog(@"state=%d", sender.state);
+            break;
     }
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
-    CGPoint currPos = [touch locationInView:self];
-    CGPoint prevPos = [touch previousLocationInView:self];
     
-    // record the point
-    [_shape updateFromPoint:prevPos toPoint:currPos];
-    
-    // call for drawing
-    [self setNeedsDisplay];
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
-    CGPoint currPos = [touch locationInView:self];
-    CGPoint prevPos = [touch previousLocationInView:self];
-    
-    [_shape updateFromPoint:prevPos toPoint:currPos];
-    
-    // when a touch ended, we finished one draw operation. We need
-    // to upate the canvas with this operation.
-    [self updateCanvas:NO];
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(sketchView:didDrawShape:)]) {
-        [_delegate sketchView:self didDrawShape:_shape];
-    }
-    
-    // reset the current draw object since a new object is created
-    // in the next round of touches.
-    _shape = nil;
-    
-    // clear the redo queue since we just commit a new operation
-    [_redoQueue removeAllObjects];
-    
-    // call for drawing
-    [self setNeedsDisplay];
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch *touch = [touches anyObject];
-    CGPoint currPos = [touch locationInView:self];
-    CGPoint prevPos = [touch previousLocationInView:self];
-    
-    [_shape updateFromPoint:prevPos toPoint:currPos];
-    
-    // when a touch ended, we finished one draw operation. We need
-    // to upate the canvas with this operation.
-    [self updateCanvas:NO];
-    
-    // reset the current draw object since a new object is created
-    // in the next round of touches.
-    _shape = nil;
-    
-    // clear the redo queue since we just commit a new operation
-    [_redoQueue removeAllObjects];
-    
-    // call for drawing
-    [self setNeedsDisplay];
+    prevPosition = pos;
 }
 
 #pragma -

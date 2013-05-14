@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NPScrollView.h"
+#import "NPSketchView.h"
 
-@interface NPSketchViewController : UIViewController
+@interface NPSketchViewController : UIViewController<NPSketchViewDelegate>
+{
+    NPScrollView *_scrollView;
+}
+
+@property (nonatomic, setter = setSketchView:) NPSketchView *sketchView;
 
 @end

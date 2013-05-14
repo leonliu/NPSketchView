@@ -12,10 +12,13 @@
 
 @protocol NPSketchViewDelegate;
 @interface NPSketchView : UIView
+{
+    
+}
 
-@property (nonatomic, weak) id<NPSketchViewDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<NPSketchViewDelegate> delegate;
 @property (nonatomic) NPShapeType shapeType;
-@property (nonatomic, strong, setter = setImage:) UIImage *image;
+@property (nonatomic, strong, setter = setImage:) IBOutlet UIImage *image;
 @property (nonatomic, strong, readonly) UIImage *canvasImage;
 @property (nonatomic, strong) UIColor *lineColor;
 @property (nonatomic, strong) UIColor *fillColor;

@@ -26,13 +26,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
+    _scrollView = [[NPScrollView alloc] initWithFrame:self.view.bounds];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setSketchView:(NPSketchView *)sketchView
+{
+    _sketchView = sketchView;
+    [_scrollView addSubview:sketchView];
+    if (sketchView.image) {
+        CGSize size = [sketchView.image size];
+        [_scrollView setContentSize:size];
+    }
 }
 
 @end

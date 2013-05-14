@@ -29,10 +29,18 @@ enum {
     [super viewDidLoad];
     
     self.slider.hidden = YES;
+    [self.view bringSubviewToFront:self.slider];
+    
     self.undoButton.enabled = NO;
     self.redoButton.enabled = NO;
+    
+    UIImage *image = [UIImage imageNamed:@"girl"];
     self.sketchView.delegate = self;
-    self.sketchView.image = [UIImage imageNamed:@"girl"];
+    self.sketchView.image = image;
+    self.sketchView.bounds = CGRectMake(0.f, 0.f, image.size.width, image.size.height);
+    self.scrollView.contentSize = [image size];
+    
+    NSLog(@"sketch view bounds: w=%f, h=%f", self.sketchView.bounds.size.width, self.sketchView.bounds.size.height);
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,7 +101,7 @@ enum {
         case 1:  // line width
         {
             _sliderType = ShowLineWidthSlider;
-            
+            [self.view bringSubviewToFront:self.slider];
             self.slider.hidden = NO;
             self.slider.minimumValue = 1.0f;
             self.slider.maximumValue = 20.f;
@@ -152,6 +160,11 @@ enum {
         default:
             break;
     }
+}
+
+- (IBAction)composeButtonTapped:(id)sender
+{
+    self.scrollView.isViewOnly = !self.scrollView.isViewOnly;
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex

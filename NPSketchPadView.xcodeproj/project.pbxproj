@@ -21,6 +21,8 @@
 		35E781471733875B00DE6EB4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E781451733875B00DE6EB4 /* ViewController.xib */; };
 		35E7814F173387D800DE6EB4 /* NPSketchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E7814E173387D800DE6EB4 /* NPSketchView.m */; };
 		35E781521733880D00DE6EB4 /* NPShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E781511733880D00DE6EB4 /* NPShape.m */; };
+		35ED7A051741DF5A008171B0 /* NPSketchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED7A041741DF5A008171B0 /* NPSketchViewController.m */; };
+		35ED7A0B1741DFBB008171B0 /* NPScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35ED7A0A1741DFBB008171B0 /* NPScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,10 @@
 		35E7814E173387D800DE6EB4 /* NPSketchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSketchView.m; sourceTree = "<group>"; };
 		35E781501733880D00DE6EB4 /* NPShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPShape.h; sourceTree = "<group>"; };
 		35E781511733880D00DE6EB4 /* NPShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPShape.m; sourceTree = "<group>"; };
+		35ED7A031741DF5A008171B0 /* NPSketchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPSketchViewController.h; sourceTree = "<group>"; };
+		35ED7A041741DF5A008171B0 /* NPSketchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPSketchViewController.m; sourceTree = "<group>"; };
+		35ED7A091741DFBB008171B0 /* NPScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPScrollView.h; sourceTree = "<group>"; };
+		35ED7A0A1741DFBB008171B0 /* NPScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NPScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,10 @@
 				35E7814E173387D800DE6EB4 /* NPSketchView.m */,
 				35E781501733880D00DE6EB4 /* NPShape.h */,
 				35E781511733880D00DE6EB4 /* NPShape.m */,
+				35ED7A031741DF5A008171B0 /* NPSketchViewController.h */,
+				35ED7A041741DF5A008171B0 /* NPSketchViewController.m */,
+				35ED7A091741DFBB008171B0 /* NPScrollView.h */,
+				35ED7A0A1741DFBB008171B0 /* NPScrollView.m */,
 			);
 			path = NPSketchPadView;
 			sourceTree = "<group>";
@@ -192,6 +202,8 @@
 				35E781441733875B00DE6EB4 /* ViewController.m in Sources */,
 				35E7814F173387D800DE6EB4 /* NPSketchView.m in Sources */,
 				35E781521733880D00DE6EB4 /* NPShape.m in Sources */,
+				35ED7A051741DF5A008171B0 /* NPSketchViewController.m in Sources */,
+				35ED7A0B1741DFBB008171B0 /* NPScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

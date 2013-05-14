@@ -14,18 +14,36 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _isViewOnly = YES;
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+// override points for subclasses to control delivery of touch events to subviews of the scroll view
+// called before touches are delivered to a subview of the scroll view. if it returns NO the touches
+// will not be delivered to the subview. default returns YES
+- (BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view
 {
-    // Drawing code
+    BOOL ret = YES;
+    if (self.isViewOnly) {
+        ret = NO;
+    }
+    
+    return ret;
 }
-*/
+
+// called before scrolling begins if touches have already been delivered to a subview of the scroll view.
+// if it returns NO the touches will continue to be delivered to the subview and scrolling will not occur
+// not called if canCancelContentTouches is NO. default returns YES if view isn't a UIControl
+- (BOOL)touchesShouldCancelInContentView:(UIView *)view
+{
+    BOOL ret = YES;
+    if (self.isViewOnly) {
+        ret = NO;
+    }
+    
+    return ret;
+}
+
 
 @end
